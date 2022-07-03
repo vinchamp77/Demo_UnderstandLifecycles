@@ -1,4 +1,4 @@
-package com.example.understandlifecyclesdemo.ui.screens
+package com.example.understandlifecyclesdemo.ui.common
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

@@ -11,14 +11,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.example.understandlifecyclesdemo.ui.common.DefaultButton
 import com.example.understandlifecyclesdemo.ui.theme.SimpleNavComposeAppTheme
 
 @Composable
 fun HomeScreen(
-    navigateToProfile: (Int, Boolean) -> Unit,
-    navigateToSearch: (String) -> Unit,
     popBackStack: () -> Unit,
-    popUpToLogin: () -> Unit,
 ) {
 
     Column (
@@ -27,23 +25,8 @@ fun HomeScreen(
         Text("Home Screen", fontSize = 40.sp)
 
         DefaultButton(
-            text = "Profile",
-            onClick = { navigateToProfile(7, true) }
-        )
-
-        DefaultButton(
-            text = "Search",
-            onClick = { navigateToSearch("liang moi") }
-        )
-
-        DefaultButton(
             text = "Back",
             onClick = popBackStack
-        )
-
-        DefaultButton(
-            text = "Log Out",
-            onClick = popUpToLogin
         )
     }
 }
@@ -56,11 +39,7 @@ private fun DefaultPreview() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colors.background
         ) {
-            HomeScreen(
-                navigateToProfile = { _,_ -> },
-                navigateToSearch = {},
-                popBackStack = {},
-                popUpToLogin = {})
+            HomeScreen(popBackStack = {})
        }
     }
 }
