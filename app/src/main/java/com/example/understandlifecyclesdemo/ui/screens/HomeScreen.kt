@@ -18,11 +18,10 @@ import com.example.understandlifecyclesdemo.ui.theme.SimpleNavComposeAppTheme
 fun HomeScreen(
     popBackStack: () -> Unit,
 ) {
-
     Column (
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally) {
-        Text("Home Screen", fontSize = 40.sp)
+        Text("Second Screen", fontSize = 40.sp)
 
         DefaultButton(
             text = "Back",
