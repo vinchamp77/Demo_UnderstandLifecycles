@@ -1,11 +1,13 @@
 package com.example.understandlifecyclesdemo.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.understandlifecyclesdemo.ui.MyLifeCycleObserver
@@ -23,7 +25,6 @@ class MainActivity : ComponentActivity() {
         lifecycle.addObserver(observer)
 
         setContent {
-            val viewModel:MainViewModel = viewModel()
             MainScreen()
         }
     }
@@ -31,6 +32,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun MainScreen() {
+
+    val viewModel: MainViewModel = viewModel(factory = MainViewModelFactory("MainScreen"))
+
     SimpleNavComposeAppTheme {
         val navController = rememberNavController()
         BuildNavGraph(navController)

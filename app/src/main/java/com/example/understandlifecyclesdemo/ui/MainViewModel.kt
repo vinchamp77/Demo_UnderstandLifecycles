@@ -1,21 +1,19 @@
 package com.example.understandlifecyclesdemo.ui
 
-import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.ViewModel
 
-@SuppressLint("LongLogTag")
-class MainViewModel : ViewModel() {
+class MainViewModel(private val name: String) : ViewModel() {
 
-    private val tag = "LifeCycleDebug:ViewModel"
+    private val tag = "LifeCycleDebug"
 
     init {
-        Log.d(tag, "onCreated()")
+        Log.d(tag, "${name}ViewModel: onCreated()")
     }
 
     override fun onCleared() {
         super.onCleared()
 
-        Log.d(tag, "onCleared()")
+        Log.d(tag, "${name}ViewModel: onCleared()")
     }
 }
