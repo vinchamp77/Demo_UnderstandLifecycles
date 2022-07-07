@@ -9,7 +9,7 @@ import com.example.understandlifecyclesdemo.ui.screens.HomeScreen
 import com.example.understandlifecyclesdemo.ui.screens.LoginScreen
 
 @Composable
-fun BuildNavGraph(navController: NavHostController) {
+fun NavGraph(navController: NavHostController) {
 
     NavHost(
         navController = navController,
