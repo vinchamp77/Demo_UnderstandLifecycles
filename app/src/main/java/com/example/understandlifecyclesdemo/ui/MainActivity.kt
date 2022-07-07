@@ -17,7 +17,6 @@ class MainActivity : ComponentActivity() {
 
         val observer = MyLifeCycleObserver(MainActivity::class.simpleName!!)
         lifecycle.addObserver(observer)
-        lifecycle.addObserver(observer)
 
         setContent {
             MainScreen()
