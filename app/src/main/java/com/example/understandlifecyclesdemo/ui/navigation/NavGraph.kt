@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.understandlifecyclesdemo.ui.screens.HomeScreen
-import com.example.understandlifecyclesdemo.ui.screens.LoginScreen
+import com.example.understandlifecyclesdemo.ui.screens.SecondScreen
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -26,7 +26,7 @@ private fun addLoginScreen(
     navGraphBuilder: NavGraphBuilder
 ) {
     navGraphBuilder.composable(route = NavRoute.Login.path) {
-        LoginScreen(
+        SecondScreen(
             navigateToHome = {
                 navController.navigate(NavRoute.Home.path)
             }
