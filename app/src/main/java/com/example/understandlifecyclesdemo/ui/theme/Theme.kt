@@ -29,7 +29,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun SimpleNavComposeAppTheme(
+fun UnderstandLifeCyclesDemoAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     useSystemUiController: Boolean = true,
     content: @Composable () -> Unit

@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.understandlifecyclesdemo.ui.navigation.NavGraph
-import com.example.understandlifecyclesdemo.ui.theme.SimpleNavComposeAppTheme
+import com.example.understandlifecyclesdemo.ui.theme.UnderstandLifeCyclesDemoAppTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -36,9 +36,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun MainScreen() {
 
+    //view model store owner belongs to the activity
     val viewModel: MainViewModel = viewModel(factory = MainViewModelFactory("MainScreen"))
 
-    SimpleNavComposeAppTheme {
+    UnderstandLifeCyclesDemoAppTheme {
         val navController = rememberNavController()
         NavGraph(navController)
     }
