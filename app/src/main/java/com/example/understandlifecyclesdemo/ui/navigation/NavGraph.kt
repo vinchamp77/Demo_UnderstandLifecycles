@@ -15,13 +15,13 @@ fun NavGraph(navController: NavHostController) {
         navController = navController,
         startDestination = NavRoute.Login.path
     ) {
-        addLoginScreen(navController, this)
+        addFirstScreen(navController, this)
 
-        addHomeScreen(navController, this)
+        addSecondScreen(navController, this)
     }
 }
 
-private fun addLoginScreen(
+private fun addFirstScreen(
     navController: NavHostController,
     navGraphBuilder: NavGraphBuilder
 ) {
@@ -34,7 +34,7 @@ private fun addLoginScreen(
     }
 }
 
-private fun addHomeScreen(
+private fun addSecondScreen(
     navController: NavHostController,
     navGraphBuilder: NavGraphBuilder
 ) {

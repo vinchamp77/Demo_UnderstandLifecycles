@@ -1,6 +1,7 @@
 package com.example.understandlifecyclesdemo.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
@@ -21,6 +22,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             MainScreen()
         }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+
+        Log.d(
+            "LifeCycleDebug",
+            "${MainActivity::class.simpleName!!}: onRestart()")
     }
 }
 

@@ -23,7 +23,7 @@ fun SecondScreen(
     navigateToHome: () -> Unit
 ) {
     //compose navigation creates a new view model store owner for each destination
-    val viewModel: MainViewModel = viewModel(factory = MainViewModelFactory("LoginScreen"))
+    val viewModel: MainViewModel = viewModel(factory = MainViewModelFactory("FirstScreen"))
 
     val context = LocalContext.current
 

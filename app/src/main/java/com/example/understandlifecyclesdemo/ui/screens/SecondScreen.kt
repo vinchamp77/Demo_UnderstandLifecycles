@@ -25,7 +25,7 @@ fun HomeScreen(
     popBackStack: () -> Unit,
 ) {
     //compose navigation creates a new view model store owner for each destination
-    val viewModel: MainViewModel = viewModel(factory = MainViewModelFactory("HomeScreen"))
+    val viewModel: MainViewModel = viewModel(factory = MainViewModelFactory("SecondScreen"))
 
     Column (
         modifier = Modifier.fillMaxWidth(),
