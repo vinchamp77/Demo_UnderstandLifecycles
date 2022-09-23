@@ -20,9 +20,6 @@
             android:name="com.example.understandlifecyclesdemo.ui.SecondActivity"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
         </activity>
     </application>
 
