@@ -5,6 +5,6 @@ Simple Jetpack Compose app to demostrate activity and view model lifecyles.
 - Android Studio Dolphin or later
 
 ## Articles
-- Activity and View Model Lifecycles Demo App
+- [Activity and View Model Lifecycles Demo App](https://vtsen.hashnode.dev/activity-and-view-model-lifecycles-demo-app)
 
 
