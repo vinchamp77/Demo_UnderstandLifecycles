@@ -29,6 +29,11 @@ class MyLifeCycleObserver(private val name: String) : DefaultLifecycleObserver {
     }
 
     override fun onDestroy(owner: LifecycleOwner) {
-        Log.d(tag, "$name: onDestroy()")
+        var isFinishing = false
+        if(owner is MainActivity) {
+            isFinishing = owner.isFinishing
+        }
+
+        Log.d(tag, "$name: onDestroy() - isFinishing:$isFinishing")
     }
 }
