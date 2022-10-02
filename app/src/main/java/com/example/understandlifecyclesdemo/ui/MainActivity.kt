@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
         super.onRestart()
 
         Log.d(
-            "LifeCycleDebug",
+            tag,
             "${MainActivity::class.simpleName!!}: onRestart()")
     }
 }

@@ -5,8 +5,6 @@ import androidx.lifecycle.ViewModel
 
 class MainViewModel(private val name: String) : ViewModel() {
 
-    private val tag = "LifeCycleDebug"
-
     init {
         Log.d(tag, "${name}ViewModel: onCreated()")
     }

@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 
-class MyLifeCycleObserver(private val name: String) : DefaultLifecycleObserver {
+const val tag = "LifeCycleDebug"
 
-    private val tag = "LifeCycleDebug"
+class MyLifeCycleObserver(private val name: String) : DefaultLifecycleObserver {
 
     override fun onCreate(owner: LifecycleOwner) {
         Log.d(tag, "$name: onCreate()")
