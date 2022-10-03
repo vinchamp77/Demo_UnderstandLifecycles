@@ -9,8 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.understandlifecyclesdemo.ui.MainViewModel
-import com.example.understandlifecyclesdemo.ui.MainViewModelFactory
+import com.example.understandlifecyclesdemo.ui.viewmodel.MainViewModel
+import com.example.understandlifecyclesdemo.ui.viewmodel.MainViewModelFactory
 import com.example.understandlifecyclesdemo.ui.SecondActivity
 import com.example.understandlifecyclesdemo.ui.common.DefaultButton
 
@@ -20,7 +20,8 @@ fun FirstScreen(
 ) {
     //compose navigation creates a new view model store owner for each destination
     val viewModel: MainViewModel = viewModel(
-        factory = MainViewModelFactory("FirstScreen"))
+        factory = MainViewModelFactory("FirstScreen")
+    )
 
     val context = LocalContext.current
 
