@@ -5,13 +5,12 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalSavedStateRegistryOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.understandlifecyclesdemo.ui.navigation.NavGraph
 import com.example.understandlifecyclesdemo.ui.theme.UnderstandLifeCyclesDemoAppTheme
-import com.example.understandlifecyclesdemo.ui.viewmodel.MainViewModel
-import com.example.understandlifecyclesdemo.ui.viewmodel.MainViewModelFactory
-import com.example.understandlifecyclesdemo.ui.viewmodel.SavedStateHandleViewModel
+import com.example.understandlifecyclesdemo.ui.viewmodel.*
 
 const val KEY = "key"
 
@@ -73,8 +72,17 @@ private fun MainScreen() {
 
     //view model store owner belongs to the activity
     val viewModel: MainViewModel = viewModel(factory = MainViewModelFactory("MainScreen"))
-    val savedStateHandleViewModel: SavedStateHandleViewModel = viewModel()
 
+    // SavedStateHandle testing in View Model
+    // (1) SavedStateHandle - no args
+    val noArgsSavedStateViewModel: NoArgsSavedStateViewModel = viewModel()
+    // (1) SavedStateHandle - with args (custom factory)
+    val savedStateMainViewModel: SavedStateMainViewModel = viewModel(
+        factory = SavedStateMainViewModelFactory(
+            LocalSavedStateRegistryOwner.current,
+            null,
+            "MainScreen")
+    )
 
     UnderstandLifeCyclesDemoAppTheme {
         val navController = rememberNavController()
